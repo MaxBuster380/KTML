@@ -56,7 +56,7 @@ class HtmlObjectTagTest {
         assertEquals("<div class=\"myFirstClass,mySecondClass\">", multiClassDiv.toString())
         assertEquals("<div id=\"myId\" class=\"myFirstClass,mySecondClass\">", multiClassIndexedDiv.toString())
         assertEquals("<div bar=\"foo\" foo=\"bar\">", propertiedDiv.toString())
-        assertEquals("<div style=\"display:flex;flex-direction:column;\">", styledDiv.toString())
+        assertEquals("<div style=\"display: flex;flex-direction: column;\">", styledDiv.toString())
     }
 
     @Test

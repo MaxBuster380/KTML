@@ -71,16 +71,16 @@ class HtmlContentTagTest {
     @Test
     fun testToString() {
 
-        assertEquals("<div/>", singleDiv.toString())
-        assertEquals("<img/>", singleImg.toString())
-        assertEquals("<div id=\"myId\"/>", indexedDiv.toString())
-        assertEquals("<div class=\"myClass\"/>", singleClassDiv.toString())
-        assertEquals("<div class=\"myFirstClass,mySecondClass\"/>", multiClassDiv.toString())
-        assertEquals("<div id=\"myId\" class=\"myFirstClass,mySecondClass\"/>", multiClassIndexedDiv.toString())
-        assertEquals("<div bar=\"foo\" foo=\"bar\"/>", propertiedDiv.toString())
-        assertEquals("<div style=\"display:flex;flex-direction:column;\"/>", styledDiv.toString())
+        assertEquals("<div></div>", singleDiv.toString())
+        assertEquals("<img></img>", singleImg.toString())
+        assertEquals("<div id=\"myId\"></div>", indexedDiv.toString())
+        assertEquals("<div class=\"myClass\"></div>", singleClassDiv.toString())
+        assertEquals("<div class=\"myFirstClass,mySecondClass\"></div>", multiClassDiv.toString())
+        assertEquals("<div id=\"myId\" class=\"myFirstClass,mySecondClass\"></div>", multiClassIndexedDiv.toString())
+        assertEquals("<div bar=\"foo\" foo=\"bar\"></div>", propertiedDiv.toString())
+        assertEquals("<div style=\"display: flex;flex-direction: column;\"></div>", styledDiv.toString())
 
-        assertEquals("<div><a><b><c><d/></c><e/></b><f/></a></div>", deeplyNestedDiv.toString())
+        assertEquals("<div><a><b><c><d></d></c><e></e></b><f></f></a></div>", deeplyNestedDiv.toString())
     }
 
     @Test
@@ -101,7 +101,7 @@ class HtmlContentTagTest {
             assertEquals(element.toString(), element.toPrettyString())
 
         assertEquals(
-            "<div>\n\t<a>\n\t\t<b>\n\t\t\t<c>\n\t\t\t\t<d/>\n\t\t\t</c>\n\t\t\t<e/>\n\t\t</b>\n\t\t<f/>\n\t</a>\n</div>",
+            "<div>\n\t<a>\n\t\t<b>\n\t\t\t<c>\n\t\t\t\t<d></d>\n\t\t\t</c>\n\t\t\t<e></e>\n\t\t</b>\n\t\t<f></f>\n\t</a>\n</div>",
             deeplyNestedDiv.toPrettyString()
         )
     }

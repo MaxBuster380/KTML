@@ -87,7 +87,7 @@ class CssProperties(
 
     private fun attributeLines(): List<String> {
 
-        return attributes.map { "${it.key}:${it.value};" }
+        return attributes.map { "${it.key}: ${it.value};" }
     }
 
 }

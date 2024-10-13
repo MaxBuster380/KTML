@@ -212,17 +212,15 @@ class HtmlContentTag(
 
     override fun toString(): String {
 
-        if (content.isEmpty())
-            return singleLineHead()
-
         val stringBuilder = StringBuilder()
 
         stringBuilder.append(head())
 
-        stringBuilder.append(
-            content
-                .joinToString("") { it.toString() }
-        )
+        if (content.isNotEmpty())
+            stringBuilder.append(
+                content
+                    .joinToString("") { it.toString() }
+            )
 
         stringBuilder.append(foot())
 
@@ -231,20 +229,21 @@ class HtmlContentTag(
 
     override fun toPrettyString(): String {
 
-        if (content.isEmpty())
-            return singleLineHead()
-
         val stringBuilder = StringBuilder()
 
-        stringBuilder.append(head() + "\n")
+        stringBuilder.append(head())
 
-        stringBuilder.append(
-            content
-                .joinToString("\n") { it.toPrettyString() }
-                .addIndent()
-        )
+        if (content.isNotEmpty()) {
+            stringBuilder.append("\n")
+            stringBuilder.append(
+                content
+                    .joinToString("\n") { it.toPrettyString() }
+                    .addIndent()
+            )
+            stringBuilder.append("\n")
+        }
 
-        stringBuilder.append("\n" + foot())
+        stringBuilder.append(foot())
 
         return stringBuilder.toString()
     }
@@ -257,11 +256,6 @@ class HtmlContentTag(
     private fun foot(): String {
 
         return "</$name>"
-    }
-
-    private fun singleLineHead(): String {
-
-        return "<${headContent()}/>"
     }
 
 }

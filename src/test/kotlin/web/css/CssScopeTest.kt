@@ -49,7 +49,7 @@ class CssScopeTest {
         )
 
         assertEquals(
-            ".test{display:flex;flex-direction:column;.sub-test1{width:100%;}.sub-test2{height:54px;}}",
+            ".test{display: flex;flex-direction: column;.sub-test1{width: 100%;}.sub-test2{height: 54px;}}",
             style.toString()
         )
     }
@@ -72,7 +72,7 @@ class CssScopeTest {
         )
 
         assertEquals(
-            ".test {\n\tdisplay:flex;\n\tflex-direction:column;\n\t\n\t.sub-test1 {\n\t\twidth:100%;\n\t}\n\t\n\t.sub-test2 {\n\t\theight:54px;\n\t}\n}",
+            ".test {\n\tdisplay: flex;\n\tflex-direction: column;\n\t\n\t.sub-test1 {\n\t\twidth: 100%;\n\t}\n\t\n\t.sub-test2 {\n\t\theight: 54px;\n\t}\n}",
             style.toPrettyString()
         )
     }

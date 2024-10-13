@@ -31,7 +31,7 @@ repositories {
 
 ```gradle
 dependencies {
-	implementation 'com.github.MaxBuster380:KTML:1.0.4'
+	implementation 'com.github.MaxBuster380:KTML:1.0.5'
 }
 ```
 
@@ -47,7 +47,7 @@ repositories {
 
 ```kt
 dependencies {
-    implementation("com.github.MaxBuster380:KTML:1.0.4")
+    implementation("com.github.MaxBuster380:KTML:1.0.5")
 }
 ```
 
@@ -56,7 +56,6 @@ __Maven__
 In `pom.xml` :
 
 ```xml
-
 <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
@@ -64,11 +63,10 @@ In `pom.xml` :
 ```
 
 ```xml
-
 <dependency>
     <groupId>com.github.MaxBuster380</groupId>
     <artifactId>KTML</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 </dependency>
 ```
 

@@ -29,7 +29,7 @@ plugins {
     `maven-publish`
 }
 group = "com.github.MaxBuster380"
-version = "1.0.4"
+version = "1.0.5"
 
 repositories {
     mavenCentral()
@@ -52,7 +52,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.github.MaxBuster380"
             artifactId = "library"
-            version = "1.0.4"
+            version = "1.0.5"
 
             from(components["java"])
         }

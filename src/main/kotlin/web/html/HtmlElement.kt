@@ -58,7 +58,7 @@ interface HtmlElement : WebElement {
          *
          * Returns the string representation of the web element with indentation and new lines.
          */
-        fun List<HtmlElement>.toPrettyString(): String = joinToString("\n")
+        fun List<HtmlElement>.toPrettyString(): String = joinToString("\n") { it.toPrettyString() }
 
     }
 }

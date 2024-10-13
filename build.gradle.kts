@@ -26,6 +26,7 @@
 
 plugins {
     kotlin("jvm") version "2.0.20"
+    `maven-publish`
 }
 
 group = "fr.maxbuster"
@@ -42,6 +43,7 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
     jvmToolchain(17)
 }

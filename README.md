@@ -31,7 +31,7 @@ repositories {
 
 ```gradle
 dependencies {
-	implementation 'com.github.MaxBuster380:KTML:1.0.0'
+	implementation 'com.github.MaxBuster380:KTML:1.0.2'
 }
 ```
 
@@ -47,7 +47,7 @@ repositories {
 
 ```kt
 dependencies {
-    implementation("com.github.MaxBuster380:KTML:1.0.0")
+    implementation("com.github.MaxBuster380:KTML:1.0.2")
 }
 ```
 
@@ -68,7 +68,7 @@ In `pom.xml` :
 <dependency>
     <groupId>com.github.MaxBuster380</groupId>
     <artifactId>KTML</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 

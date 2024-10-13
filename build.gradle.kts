@@ -29,7 +29,7 @@ plugins {
     `maven-publish`
 }
 
-group = "fr.maxbuster"
+group = "com.github.MaxBuster380"
 version = "1.0-SNAPSHOT"
 
 repositories {

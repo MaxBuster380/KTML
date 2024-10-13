@@ -24,11 +24,15 @@ __Gradle__
 In `build.gradle` :
 
 ```gradle
-
+repositories {
+	maven { url 'https://jitpack.io' }
+}
 ```
 
 ```gradle
-
+dependencies {
+	implementation 'com.github.MaxBuster380:KTML:1.0.0'
+}
 ```
 
 __Gradle (Kotlin)__
@@ -49,10 +53,19 @@ In `pom.xml` :
 
 ```xml
 
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
 ```
 
 ```xml
 
+<dependency>
+    <groupId>com.github.MaxBuster380</groupId>
+    <artifactId>KTML</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 ---

@@ -28,9 +28,8 @@ plugins {
     kotlin("jvm") version "2.0.20"
     `maven-publish`
 }
-
 group = "com.github.MaxBuster380"
-version = "1.0-SNAPSHOT"
+version = "1.0.4"
 
 repositories {
     mavenCentral()
@@ -46,4 +45,16 @@ tasks.test {
 
 kotlin {
     jvmToolchain(17)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.MaxBuster380"
+            artifactId = "library"
+            version = "1.0.4"
+
+            from(components["java"])
+        }
+    }
 }

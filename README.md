@@ -40,11 +40,15 @@ __Gradle (Kotlin)__
 In `build.gradle` :
 
 ```kt
-
+repositories {
+    maven("https://jitpack.io")
+}
 ```
 
 ```kt
-
+dependencies {
+    implementation("com.github.MaxBuster380:KTML:1.0.0")
+}
 ```
 
 __Maven__

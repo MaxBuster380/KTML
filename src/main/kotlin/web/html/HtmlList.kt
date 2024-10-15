@@ -31,13 +31,15 @@ package web.html
  *
  * An HTML list is an ordered collection of HTML elements that can make up a document.
  */
-class HtmlList private constructor(
-    private val subList: MutableList<HtmlElement> = mutableListOf(),
+class HtmlList (
+    subList: Collection<HtmlElement>
 ) : HtmlElement, MutableList<HtmlElement> {
 
     constructor(vararg elements: HtmlElement) : this(
         elements.toMutableList()
     )
+
+    private val subList: MutableList<HtmlElement> = subList.toMutableList()
 
     override val size: Int get() = subList.size
 

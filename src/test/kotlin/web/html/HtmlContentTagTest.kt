@@ -49,14 +49,14 @@ class HtmlContentTagTest {
     )
 
     private val deeplyNestedDiv = HtmlContentTag(
-        name = "div", content = mutableListOf(
+        name = "div", content = HtmlList(
             HtmlContentTag(
-                name = "a", content = mutableListOf(
+                name = "a", content = HtmlList(
                     HtmlContentTag(
-                        name = "b", content = mutableListOf(
+                        name = "b", content = HtmlList(
                             HtmlContentTag(
-                                name = "c", content = mutableListOf(
-                                    HtmlContentTag(name = "d", content = mutableListOf())
+                                name = "c", content = HtmlList(
+                                    HtmlContentTag(name = "d", content = HtmlList())
                                 )
                             ),
                             HtmlContentTag(name = "e")

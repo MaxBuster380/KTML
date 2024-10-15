@@ -29,7 +29,7 @@ plugins {
     `maven-publish`
 }
 group = "com.github.MaxBuster380"
-version = "1.1.0"
+version = "1.2.0"
 
 repositories {
     mavenCentral()

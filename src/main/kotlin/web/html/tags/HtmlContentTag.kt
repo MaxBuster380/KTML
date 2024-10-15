@@ -29,6 +29,7 @@ package fr.maxbuster.web.html.tags
 import web.css.CssProperties
 import web.html.HtmlElement
 import web.html.HtmlElement.Companion.addIndent
+import web.html.HtmlList
 import web.html.tags.HtmlObjectTag
 
 /**
@@ -119,7 +120,7 @@ class HtmlContentTag(
      * </div>
      * ```
      */
-    val content: MutableList<HtmlElement>,
+    val content: HtmlList,
 ) : HtmlObjectTag(
     name = name,
     id = id,
@@ -204,7 +205,7 @@ class HtmlContentTag(
         classes = classes,
         style = style,
         attributes = attributes,
-        content = mutableListOf()
+        content = HtmlList()
     ) {
 
         if (content != null) this.content += content
@@ -217,10 +218,7 @@ class HtmlContentTag(
         stringBuilder.append(head())
 
         if (content.isNotEmpty())
-            stringBuilder.append(
-                content
-                    .joinToString("") { it.toString() }
-            )
+            stringBuilder.append(content)
 
         stringBuilder.append(foot())
 
@@ -236,9 +234,7 @@ class HtmlContentTag(
         if (content.isNotEmpty()) {
             stringBuilder.append("\n")
             stringBuilder.append(
-                content
-                    .joinToString("\n") { it.toPrettyString() }
-                    .addIndent()
+                content.toPrettyString().addIndent()
             )
             stringBuilder.append("\n")
         }

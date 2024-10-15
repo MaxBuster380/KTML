@@ -31,7 +31,7 @@ repositories {
 
 ```gradle
 dependencies {
-	implementation 'com.github.MaxBuster380:KTML:1.1.0'
+	implementation 'com.github.MaxBuster380:KTML:1.2.0'
 }
 ```
 
@@ -47,7 +47,7 @@ repositories {
 
 ```kt
 dependencies {
-    implementation("com.github.MaxBuster380:KTML:1.1.0")
+    implementation("com.github.MaxBuster380:KTML:1.2.0")
 }
 ```
 
@@ -66,7 +66,7 @@ In `pom.xml` :
 <dependency>
     <groupId>com.github.MaxBuster380</groupId>
     <artifactId>KTML</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -82,10 +82,10 @@ fun main() {
     val title = "KTML example"
 
     val page = HtmlContentTag(
-        "html", attributes = hashMapOf("lang" to "en"), content = mutableListOf(
+        "html", attributes = hashMapOf("lang" to "en"), content = HtmlList(
 
             HtmlContentTag(
-                "head", content = mutableListOf(
+                "head", content = HtmlList(
 
                     HtmlObjectTag("meta", attributes = hashMapOf("charset" to "utf-8")),
 
@@ -112,7 +112,7 @@ fun main() {
             ),
 
             HtmlContentTag(
-                "body", content = mutableListOf(
+                "body", content = HtmlList(
 
                     HtmlContentTag(
                         "h1", content =
@@ -142,30 +142,29 @@ fun main() {
 gives this :
 
 ```html
-
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>
-        KTML example
-    </title>
-</head>
-<style>
-    h1 {
-		background-image:linear-gradient(45deg, #6040E0, #366668);
-		background-clip:text;
-		color:transparent;
-	}
-</style>
-<body>
-<h1>
-    KTML example
-</h1>
-<p>
-    This page was generated using KTML.<br>
-    &lt;span&gt;This is not interpreted as a tag.&lt;/span&gt;
-</p>
-</body>
+	<head>
+	    <meta charset="utf-8">
+	    <title>
+	        KTML example
+	    </title>
+	</head>
+	<style>
+	    h1 {
+			background-image:linear-gradient(45deg, #6040E0, #366668);
+			background-clip:text;
+			color:transparent;
+		}
+	</style>
+	<body>
+		<h1>
+		    KTML example
+		</h1>
+		<p>
+	   		This page was generated using KTML.<br>
+	   		&lt;span&gt;This is not interpreted as a tag.&lt;/span&gt;
+		</p>
+	</body>
 </html>
 ```
 

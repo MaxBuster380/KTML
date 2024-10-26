@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2024 MaxBuster
  *
- * This is the "build.gradle.kts" file from the KTML project.
+ * This is the "RawHtmlElement.kt" file from the KTML project.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,37 +24,31 @@
  * SOFTWARE.
  */
 
-plugins {
-    kotlin("jvm") version "2.0.20"
-    `maven-publish`
-}
-group = "com.github.MaxBuster380"
-version = "1.3.0"
+package web.html
 
-repositories {
-    mavenCentral()
-}
+/**
+ * # RawHtmlElement
+ *
+ * A raw HTML element wraps an HTML text to be used as an HTML element.
+ *
+ * **This element must be used with care, as it doesn't filter out any potentially malicious components.
+ */
+data class RawHtmlElement(
+    /**
+     * # RawHtmlElement.value
+     *
+     * The un-sanitized textual value.
+     */
+    val value: String,
+) : HtmlElement {
 
-dependencies {
-    testImplementation(kotlin("test"))
-}
+    override fun toString(): String {
 
-tasks.test {
-    useJUnitPlatform()
-}
+        return value
+    }
 
-kotlin {
-    jvmToolchain(17)
-}
+    override fun toPrettyString(): String {
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.github.MaxBuster380"
-            artifactId = "library"
-            version = "1.3.0"
-
-            from(components["java"])
-        }
+        return value
     }
 }

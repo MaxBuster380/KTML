@@ -61,6 +61,16 @@ data class CssScope(
     val subScopes: MutableSet<CssScope> = mutableSetOf(),
 ) : WebElement {
 
+    constructor(
+        target: String,
+        properties: CssProperties = CssProperties(),
+        subScopes: MutableSet<CssScope> = mutableSetOf()
+    ): this(
+        header = CssScopeHeadTarget(target),
+        properties = properties,
+        subScopes = subScopes
+    )
+
     override fun toString(): String {
 
         val stringBuilder = StringBuilder()

@@ -42,6 +42,14 @@ data class RawHtmlElement(
     val value: String,
 ) : HtmlElement {
 
+    companion object {
+
+        /**
+         * Creates a static version of this element as a raw HTML element.
+         */
+        fun HtmlElement.static(): RawHtmlElement = RawHtmlElement(toString())
+    }
+
     override fun toString(): String {
 
         return value
